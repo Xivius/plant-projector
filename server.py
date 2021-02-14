@@ -61,6 +61,7 @@ def categorize():
     max_temp = ((max_temp - 273.15) * 1.8) + 32
     situation = ""
 
+    # assess situation
     if min_temp <= plant_abs_temp_lower:
         situation = possible_outcomes[3]
     elif max_temp >= plant_abs_temp_upper:
@@ -72,11 +73,11 @@ def categorize():
     else:
         situation = possible_outcomes[4]
 
+    # report data to user
     page_data = jsonify({
         "plant-type": result[0],
         "outcome": situation
     })
-
     return render_template('test.html', data=page_data)
 
 if __name__ == "__main__":
