@@ -11,6 +11,25 @@ window.onload = function main() {
     }
   }
 
+  if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
+    location.innerHTML = "Error Occured: Back camera not supported.");
+    return;
+  }
+
+  navigator.mediaDevices.enumerateDevices()
+  .then(function(devices) {
+    var cameras = [];
+    devices.forEach(function (device) {
+      if (device.kind === 'videoInput') {
+        cameras.push(device);
+      }
+    });
+    
+  })
+  .catch(function(err) {
+    console.log(err.name + ": " + err.message);
+  });
+
   // Access camera
   if (navigator.mediaDevices) {
     if (navigator.mediaDevices.getUserMedia) {
@@ -40,6 +59,7 @@ window.onload = function main() {
   // Take Photo
   snap.addEventListener("click", (e) => {
     e.preventDefault();
+    if (navigator.)
     var canvas = document.createElement('canvas');
     canvas.width = video.offsetWidth;
     canvas.height = video.offsetHeight;
@@ -47,17 +67,15 @@ window.onload = function main() {
     context.drawImage(video, 0, 0);
     var dataURL = canvas.toDataURL().split('base64,')[1];
     var req = new XMLHttpRequest();
-    req.open("POST", "https://127.0.0.1:8000/categorize");
+    req.open("POST", "https://127.0.0.1:8000/analyze");
     req.overrideMimeType("application/json");
-    req.send(JSON.stringify({image: dataURL}));
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
-        req.open("POST", "https://127.0.0.1:8000/analyze-outcome");
         req.overrideMimeType("application/json");
-        req.send(JSON.stringify({x: longitude, y: latitude}));
+        req.send(JSON.stringify({x: longitude, y: latitude, img: dataURL}));
       });
     } else {
       location.innerHTML = "Error Occured: Geolocation is not supported by this browser.";
