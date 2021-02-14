@@ -70,10 +70,12 @@ def categorize():
     elif max_temp <= plant_temp_upper:
         situation = possible_outcomes[1]
 
-    return jsonify({
+    page_data = jsonify({
         "plant-type": result[0],
         "outcome": situation
     })
+
+    return render_template('test.html', data=page_data)
 
 if __name__ == "__main__":
     app.run(
