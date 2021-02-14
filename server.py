@@ -69,6 +69,8 @@ def categorize():
         situation = possible_outcomes[0]
     elif max_temp <= plant_temp_upper:
         situation = possible_outcomes[1]
+    else:
+        situation = possible_outcomes[4]
 
     page_data = jsonify({
         "plant-type": result[0],
