@@ -41,6 +41,7 @@ For the level of future accuracy to improve, predictions must be taken more freq
 
 ### Sources
 
-1. https://www.kaggle.com/andrewmvd/tomato-detection (data set)
-2. https://www.kaggle.com/gverzea/edible-wild-plants (data set)
-3. http://www.omafra.gov.on.ca/english/crops/facts/info_tomtemp.htm (general info)
+1. https://www.kaggle.com/andrewmvd/tomato-detection (img data set)
+2. https://www.kaggle.com/gverzea/edible-wild-plants (img data set)
+3. https://openweathermap.org/ (weather data set)
+4. http://www.omafra.gov.on.ca/english/crops/facts/info_tomtemp.htm (general info)
