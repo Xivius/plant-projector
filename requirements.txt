@@ -1,0 +1,9 @@
+environs
+flask
+flaskext
+matplotlib
+numpy
+pyopenssl
+Pillow
+tensorflow
+tf-nightly

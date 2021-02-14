@@ -6,7 +6,7 @@
 
 Plant Projector is an app for inexperienced gardeners that predicts a plant's future based on the weather forecast. It uses image classification (photo taken from phone) to identify the plant and determine its ideal temperature range. Afterwards, based on the current weather and forecasted weather, the app gives a prediction on the quality of the plant's health and/or yield in the given days. The initial plant-specific information is provided by farmer's guides online, who have much more knowledge and wisdom in this matter. Obviously, there are many other factors that contribute to a plant's health. Due to time constraints, this prototype only accounts for weather. See the future plans for details on how the app can improve.
 
-This current repo will feature a demo using a cherry tomato.
+This current repo will feature a demo using tomatoes.
 
 ### Future Plans
 
@@ -33,3 +33,14 @@ For the level of future accuracy to improve, predictions must be taken more freq
   * Amount being watered (may have to ask the user for this info)
   * Time in the shade vs sunlight (have to use latitude and time for this one. sun rises in the east and sets in the west can be used to determine how much light the plant is actually getting)
   * Appearance of pests and wild animals
+
+### Usage
+
+1. Run  `pip install -r requirements.txt` to install necessary dependencies
+2. Run `python server.py` to start the server
+
+### Sources
+
+1. https://www.kaggle.com/andrewmvd/tomato-detection (data set)
+2. https://www.kaggle.com/gverzea/edible-wild-plants (data set)
+3. http://www.omafra.gov.on.ca/english/crops/facts/info_tomtemp.htm (general info)
