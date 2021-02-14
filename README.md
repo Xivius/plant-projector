@@ -1,10 +1,20 @@
 # Plant Projector
 
-#### TreeHacks 2021 Project by Noah and Jack
+#### TreeHacks 2021 Project by Avdhesh, Jack, and Noah
 
-An app that uses AR to show a plant's projected future based on multiple factors. Not all factors can be accounted for in the prototype, but as many as possible will be included. Here are some factors to consider:
+### General Concept
 
-* Weather (tough to factor due to unpredictability)
+Plant Projector is an app for inexperienced gardeners that predicts a plant's future based on the weather forecast. It uses image classification (photo taken from phone) to identify the plant and determine its ideal temperature range. Afterwards, based on the current weather and forecasted weather, the app gives a prediction on the quality of the plant's health and/or yield in the given days. The initial plant-specific information is provided by farmer's guides online, who have much more knowledge and wisdom in this matter. Obviously, there are many other factors that contribute to a plant's health. Due to time constraints, this prototype only accounts for weather. See the future plans for details on how the app can improve.
+
+This current repo will feature a demo using a cherry tomato.
+
+### Future Plans
+
+We plan to include a feature that allows one to see the plant's projection over time period. A time meter that the user can drag would indicate the plant's predicted state at a specific moment assuming things remain as is.
+
+For the level of future accuracy to improve, predictions must be taken more frequently or recently. As mentioned before, the initial plant data is sourced from online farmer's guides. Overtime, data will be collected, aggregated, and stored in a large database for further processing. Many different scenarios will need to be explored and more variables mapped to gain a more accurate idea of what specific factors determine success of a plant more than others. Here are more factors to consider tracking in the future:
+
+* Weather
   * Precipitation
   * Temperature
   * Cloudiness (blocks out the sun)
@@ -13,16 +23,13 @@ An app that uses AR to show a plant's projected future based on multiple factors
   * Regional climate generalization
 * Plant type & characteristics
   * Appearance over the stages of life
+  * Ideal temperature
   * Lifespan
   * Species (e.g. what kind of tomato?)
-  * Current age (The time lapse between the last recorded session will help)
-  * Pollination required (are there bees in the area for instance)?
+  * Pollination requirements (e.g. bees?)
 * Current circumstances
-  * Going on a trip?
-  * Watering it this much? (may have to ask the user for this info)
-  * In the shade or out in the sunlight? (have to use latitude and time for this one. sun rises in the east and sets in the west can be used to determine how much light the plant is actually getting)
+  * Plant's current age
+  * Gardener going on a trip?
+  * Amount being watered (may have to ask the user for this info)
+  * Time in the shade vs sunlight (have to use latitude and time for this one. sun rises in the east and sets in the west can be used to determine how much light the plant is actually getting)
   * Appearance of pests and wild animals
-
-To see the plant overtime, a time meter will be placed that the user can drag to see the plant's future if things kept going the way they are. The more recently and frequently the predictions are taken, the more accurate the current projection will be. Initially, the plant data will be sourced from online farmer's guides. Overtime, data collected will be aggregated and stored in a large database.
-
-For the level of future accuracy to improve, many different scenarios will need to be mapped with variables and circumstances being recorded. This current repo will feature a demo using a cherry tomato. It may be discovered that for certain plant species, specific factors determine success more than others. This whole app is just one large data collecting experiment.
